@@ -1,4 +1,5 @@
 module 8bit{
+	uses local "74LS245" ifdef "74LS245"
 	using "implements.h" unless ifdef "root";
 	// similar to saying if root is defined don't define implements.h\
 	root contains implements.h
