@@ -6,13 +6,17 @@ module 8bit{
 	
 	
 	function clock (bool HLT, bool mode, int CLK, bool SS){
+		int out = 0;
 		if (!HLT){	
 			if (mode){
-				out=CLK;
+				out = CLK;
 			}
 			else{
-				out=SS;
+				out = SS;
 			}
 		}
+	}
+	function register (bool invAI, bool invAO, bool CLK, bool CLR){
+		
 	}
 }

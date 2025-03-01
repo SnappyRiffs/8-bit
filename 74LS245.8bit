@@ -4,14 +4,5 @@ module 8bit{
 	root contains implements.h
 	
 	
-	function clock (bool HLT, bool mode, int CLK, bool SS){
-		if (!HLT){	
-			if (mode){
-				out=CLK;
-			}
-			else{
-				out=SS;
-			}
-		}
-	}
+	
 }
