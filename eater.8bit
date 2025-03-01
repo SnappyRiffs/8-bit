@@ -3,7 +3,7 @@ module 8bit{
 	using "implements.h" unless ifdef "root";
 	// similar to saying if root is defined don't define implements.h\
 	root contains implements.h
-	
+	// bool and int are similar and thus interchangable
 	
 	function clock (bool HLT, bool mode, int CLK, bool SS){
 		int out = 0;
@@ -12,11 +12,11 @@ module 8bit{
 				out = CLK;
 			}
 			else{
-				out = SS;
+				out = (int) SS;
 			}
 		}
 	}
-	function register (bool invAI, bool invAO, bool CLK, bool CLR){
-		
+	function register (bool invAI, bool invAO, bool CLK, bool CLR, int[8] BUS){
+		int[8]
 	}
 }
