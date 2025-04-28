@@ -2,7 +2,7 @@ module 8bit{
 	using "implements.h" unless ifdef "root";
 	// similar to saying if root is defined don't define implements.h\
 	root contains implements.h
-	function 74LS245 (bool DIR, bool low OE, int[8] 
+	function 74LS245 (bool DIR, bool low OE, int[8] A, int[8] B)
 	
 	
 }
