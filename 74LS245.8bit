@@ -1,8 +1,24 @@
 module 8bit{
-	using "implements.h" unless ifdef "root";
-	// similar to saying if root is defined don't define implements.h\
-	root contains implements.h
-	function 74LS245 (bool DIR, bool low OE, int[8] A, int[8] B)
+	import "implements.h"
 	
+	// all variables and arrays must be of bool type unless implementing the runner module
 	
+	function bool[8] 74LS245 (bool DIR, bool low OE, bool[8] A, bool[8] B) {
+		if (DIR) {
+			setMode(A, input);
+			setMode(B, output);
+			for (int i = 0; i < A.length; i++) {
+				B[i] = A[i];
+			}
+			return B;
+		} else {
+			setMode(B, input);
+			setMode(A, output);
+			for (int i = 0; i < B.length; i++) {
+				A[i] = B[i];
+			}
+			return A;
+		}
+		bool[8] result = false;
+	}
 }

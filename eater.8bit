@@ -1,20 +1,22 @@
 module 8bit{
-	using local "74LS245" // similar to `import 74LS245`
-	using local "implements.h"
-	// bool and int are similar and thus interchangable
+	import "74LS245"
+	import "implements.h"
 	
-	function clock (bool HLT, bool mode, int CLK, bool SS){
-		int out = 0;
+	// all variables and arrays must be of bool type unless implementing the runner module
+	
+	function bool clock (bool HLT, bool mode, bool CLK, bool SS){
+		bool out = 0;
 		if (!HLT){	
 			if (mode){
 				out = CLK;
 			}
 			else{
-				out = (int) SS;
+				out = SS;
 			}
 		}
+		return out;
 	}
-	function register (bool invAI, bool invAO, bool CLK, bool CLR, int[8] BUS){
-		int[8]
+	function bool[8] register (bool invAI, bool invAO, bool CLK, bool CLR, bool[8] BUS){
+		bool[8]
 	}
 }
