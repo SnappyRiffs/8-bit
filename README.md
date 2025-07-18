@@ -1,3 +1,8 @@
-SEE LICENSE FOR COPYRIGHT CLAIMS AND OTHER STATEMENTS. CODE IS BY HIGHTEK AND CAN ONLY BE REPRODUCED WITH PERMISSION. TO GET PERMISSION: CONTATCT : support@hightek.com
+This code is the property of HighTek and is provided for public use under specific conditions.
+Reproduction, distribution, or modification is not permitted without prior written permission.
+
+To request permission, contact: support@hightek.com
+
+Please refer to the LICENSE file for detailed copyright and usage terms.
 
 8bit.xml has support for notepad++ users.
