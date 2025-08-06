@@ -2,7 +2,6 @@ module 8bit{
 	import "74LS245"
 	import "implements.h"
 	
-	// all variables and arrays must be of bool type unless implementing the runner module
 	
 	function bool clock (bool HLT, bool mode, bool CLK, bool SS){
 		bool out = 0;
@@ -20,3 +19,4 @@ module 8bit{
 		bool[8]
 	}
 }
+
