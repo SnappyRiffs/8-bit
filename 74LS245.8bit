@@ -1,8 +1,6 @@
 module 8bit{
 	import "implements.h"
 	
-	// all variables and arrays must be of bool type unless implementing the runner module
-	
 	function bool[8] 74LS245 (bool DIR, bool low OE, bool[8] A, bool[8] B) {
 		if (DIR) {
 			setMode(A, input);
