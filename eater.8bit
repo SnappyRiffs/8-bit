@@ -1,5 +1,5 @@
 module 8bit{
-	import "74LS245"
+	import "74LS245.8bit"
 	import "implements.h"
 	
 	
@@ -19,4 +19,5 @@ module 8bit{
 		bool[8]
 	}
 }
+
 
