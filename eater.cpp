@@ -15,8 +15,13 @@ class EightBit{
 		}
 		return out;
 	}
-	std::array<bool, 8> reg (bool invAI, bool invAO, bool CLK, bool CLR, std::array<bool, 8> BUS){
+	std::array<bool, 8> reg_A (bool AI, bool AO, bool CLK, bool CLR, std::array<bool, 8> BUS){
 		return BUS; // placeholder
 	}
+
+	std::array<bool, 8> reg_B (bool BI, bool BO, bool CLK, bool CLR, std::array<bool, 8> BUS){
+		return reg_A(BI, BO, CLK, CLR, BUS);
+	}
 }
+
 
