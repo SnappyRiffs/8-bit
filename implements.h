@@ -1,9 +1,13 @@
 #ifndef implements_H
 #define implements_H
+
+#include <Arduino.h>
+#include <array>
+
 class implements{
     public:
-        void def(mode,var);
-        void def(mode,int var[num]);
+        void setMode(int pin, int mode);
+        void setMode(std::array<int, 8> pins, int mode);
 }
 #endif
 

@@ -3,8 +3,8 @@
 #include <array>
 
 class EightBit{
-	bool clock(bool HLT, bool mode, bool CLK, bool SS){
-		bool out = 0;
+	int clock(int HLT, int mode, int CLK, int SS){
+		int out = 0;
 		if (!HLT){	
 			if (mode){
 				out = CLK;
@@ -15,11 +15,13 @@ class EightBit{
 		}
 		return out;
 	}
-	std::array<bool, 8> reg_A (bool AI, bool AO, bool CLK, bool CLR, std::array<bool, 8> BUS){
+	std::array<int, 8> reg_A (int AI, int AO, int CLK, int CLR, std::array<int, 8> BUS){
 		return BUS; // placeholder
+
+		auto result = _74LS245::transfer(AI, AO, BUS, BUS);
 	}
 
-	std::array<bool, 8> reg_B (bool BI, bool BO, bool CLK, bool CLR, std::array<bool, 8> BUS){
+	std::array<int, 8> reg_B (int BI, int BO, int CLK, int CLR, std::array<int, 8> BUS){
 		return reg_A(BI, BO, CLK, CLR, BUS);
 	}
 }

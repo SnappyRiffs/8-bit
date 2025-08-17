@@ -1,12 +1,12 @@
 #include <implements.h>
 #include <Arduino.h>
 
-void implements::def(mode, int var[num]){
-    int len = sizeof(myNumbers) / sizeof(myNumbers[0]);
-    for(int i = 0;i<len;i++){
-        def(mode,var[i]);
+void implements::setMode(int pin, int mode) {
+    pinMode(pin, mode);
+}
+
+void implements::setMode(std::array<int, 8> pins, int mode) {
+    for (int pin : pins) {
+        setMode(pin, mode);
     }
 }
-void implements::def(mode,var)(
-    pinMode(var,mode);
-)

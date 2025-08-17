@@ -7,9 +7,9 @@
 class _74LS245 {
 public:
     // Transfer between A and B depending on DIR and OE
-    std::array<bool,8> transfer(bool DIR, bool OE, 
-                                std::array<bool,8> A, 
-                                std::array<bool,8> B);
+    std::array<int,8> transfer(int DIR, int OE, 
+                                std::array<int,8> A, 
+                                std::array<int,8> B);
 };
 
 #endif // _74LS245_H
