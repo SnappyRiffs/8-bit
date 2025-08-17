@@ -1,4 +1,5 @@
 #include "_74LS245.h"
+#include <Arduino.h>
 
 std::array<bool,8> _74LS245::transfer(bool DIR, bool OE, 
                                       std::array<bool,8> A, 
