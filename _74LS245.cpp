@@ -9,17 +9,18 @@
 std::array<int,8> _74LS245::transfer(int DIR, int OE, 
                                       std::array<int,8> A, 
                                       std::array<int,8> B) {
+    std::array<int,8> emptyBus = {0, 0, 0, 0, 0, 0, 0, 0};
     if (OE == false) { // active low OE
         if (DIR == false) {
-            setMode(A, Input);
-            setMode(B, Output);
+            implements::setMode(A, Input);
+            implements::setMode(B, Output);
             for (size_t i = 0; i < A.size(); i++) {
                 B[i] = A[i];
             }
             return B;
         } else {
-            setMode(B, Input);
-            setMode(A, Output);
+            implements::setMode(B, Input);
+            implements::setMode(A, Output);
             for (size_t i = 0; i < B.size(); i++) {
                 A[i] = B[i];
             }
@@ -27,5 +28,5 @@ std::array<int,8> _74LS245::transfer(int DIR, int OE,
         }
     }
     // If OE is high (disabled), return empty bus
-    return {};
+    return emptyBus;
 }
