@@ -12,4 +12,4 @@ Statements:
 must end with `;`
 
 General:
-all variables and arrays must be of bool type unless implementing the runner module. This means that unless using an actual number, int should not be used.
+all variables and arrays must be of bool type.
