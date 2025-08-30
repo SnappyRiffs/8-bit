@@ -1,6 +1,5 @@
 #include "_74LS245.h"
 #include "implements.h"
-#include <array>
 
 class EightBit{
 	int clock(int HLT, int mode, int CLK, int SS){
