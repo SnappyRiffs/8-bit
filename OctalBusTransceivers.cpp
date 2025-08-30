@@ -1,32 +1,38 @@
+
 #include "OctalBusTransceivers.h"
 #include "implements.h"
 #include <Arduino.h>
-#include <array>
 
 #define INPUT 0
 #define OUTPUT 1
 
-std::array<int,8> OctalBusTransceivers::transfer(int DIR, int OE, 
-                                      std::array<int,8> A, 
-                                      std::array<int,8> B) {
-    std::array<int,8> emptyBus = {0, 0, 0, 0, 0, 0, 0, 0};
+void OctalBusTransceivers::transfer(int DIR, int OE, int A[8], int B[8], int result[8]) {
+    int emptyBus[8] = {0, 0, 0, 0, 0, 0, 0, 0};
     if (OE == false) { // active low OE
         if (DIR == false) {
-            implements::setMode(A, Input);
-            implements::setMode(B, Output);
-            for (size_t i = 0; i < A.size(); i++) {
+            implements::setMode(A, INPUT);
+            implements::setMode(B, OUTPUT);
+            for (int i = 0; i < 8; i++) {
                 B[i] = A[i];
             }
-            return B;
+            for (int i = 0; i < 8; i++) {
+                result[i] = B[i];
+            }
+            return;
         } else {
-            implements::setMode(B, Input);
-            implements::setMode(A, Output);
-            for (size_t i = 0; i < B.size(); i++) {
+            implements::setMode(B, INPUT);
+            implements::setMode(A, OUTPUT);
+            for (int i = 0; i < 8; i++) {
                 A[i] = B[i];
             }
-            return A;
+            for (int i = 0; i < 8; i++) {
+                result[i] = A[i];
+            }
+            return;
         }
     }
     // If OE is high (disabled), return empty bus
-    return emptyBus;
+    for (int i = 0; i < 8; i++) {
+        result[i] = emptyBus[i];
+    }
 }
