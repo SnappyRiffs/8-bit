@@ -1,10 +1,10 @@
-#ifndef _74LS245_H
-#define _74LS245_H
+#ifndef OctalBusTransceivers_H
+#define OctalBusTransceivers_H
 
 #include "implements.h"
 #include <array>
 
-class _74LS245 {
+class OctalBusTransceivers {
 public:
     // Transfer between A and B depending on DIR and OE
     std::array<int,8> transfer(int DIR, int OE, 
@@ -12,4 +12,4 @@ public:
                                 std::array<int,8> B);
 };
 
-#endif // _74LS245_H
+#endif // OctalBusTransceivers_H

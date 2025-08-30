@@ -1,4 +1,4 @@
-#include "_74LS245.h"
+#include "OctalBusTransceivers.h"
 #include "implements.h"
 #include <Arduino.h>
 #include <array>
@@ -6,7 +6,7 @@
 #define INPUT 0
 #define OUTPUT 1
 
-std::array<int,8> _74LS245::transfer(int DIR, int OE, 
+std::array<int,8> OctalBusTransceivers::transfer(int DIR, int OE, 
                                       std::array<int,8> A, 
                                       std::array<int,8> B) {
     std::array<int,8> emptyBus = {0, 0, 0, 0, 0, 0, 0, 0};
