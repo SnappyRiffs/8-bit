@@ -1,6 +1,5 @@
 #include "OctalBusTransceivers.h"
 #include "implements.h"
-#include <array>
 
 class EightBit {
 private:
@@ -30,4 +29,5 @@ public:
         return reg_A(BI, BO, CLK, CLR, BUS);
     }
 };
+
 
