@@ -4,7 +4,7 @@
 
 class EightBit {
 private:
-    std::array<int, 8> BUS_;
+    implements::Array BUS_;
 
 public:
     int clock(int HLT, int mode, int CLK, int SS) {
@@ -19,14 +19,15 @@ public:
         return out;
     }
 
-    std::array<int, 8> reg_A(int AI, int AO, int CLK, int CLR, std::array<int, 8> BUS) {
+    implements::Array reg_A(int AI, int AO, int CLK, int CLR, implements::Array BUS) {
         // Assign BUS to BUS_
         BUS_ = BUS;
         return BUS_;
     }
 
-    std::array<int, 8> reg_B(int BI, int BO, int CLK, int CLR, std::array<int, 8> BUS) {
+    implements::Array reg_B(int BI, int BO, int CLK, int CLR, implements::Array BUS) {
         // Just reuses reg_A
         return reg_A(BI, BO, CLK, CLR, BUS);
     }
 };
+
