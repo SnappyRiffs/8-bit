@@ -10,8 +10,8 @@ public:
     void setMode(int pin, int mode);
     void setMode(int pins[8], int mode);
 
-    // Typedef (better with 'using' in modern C++)
-    typedef std::array<int, 8> Array;
+    using Array = std::array<int, 8>;
+
 };
 
 #endif
