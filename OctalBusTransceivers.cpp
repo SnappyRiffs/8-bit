@@ -1,7 +1,5 @@
-
 #include "OctalBusTransceivers.h"
 #include "implements.h"
-#include <Arduino.h>
 
 #define INPUT 0
 #define OUTPUT 1
