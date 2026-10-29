@@ -3,7 +3,7 @@
 
 #include <array>
 
-class implements
+class Implements
 {
 public:
 
