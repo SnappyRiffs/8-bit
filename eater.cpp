@@ -1,9 +1,9 @@
 #include "OctalBusTransceivers.h"
-#include "implements.h"
+#include "Implements.h"
 
 class EightBit {
 private:
-    implements::Array BUS_;
+    Implements::Array BUS_;
 
 public:
     int clock(int HLT, int mode, int CLK, int SS) {
@@ -18,13 +18,13 @@ public:
         return out;
     }
 
-    implements::Array reg_A(int AI, int AO, int CLK, int CLR, implements::Array BUS) {
+    Implements::Array reg_A(int AI, int AO, int CLK, int CLR, Implements::Array BUS) {
         // Assign BUS to BUS_
         BUS_ = BUS;
         return BUS_;
     }
 
-    implements::Array reg_B(int BI, int BO, int CLK, int CLR, implements::Array BUS) {
+    Implements::Array reg_B(int BI, int BO, int CLK, int CLR, Implements::Array BUS) {
         // Just reuses reg_A
         return reg_A(BI, BO, CLK, CLR, BUS);
     }
