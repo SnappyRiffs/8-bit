@@ -1,0 +1,45 @@
+#1:
+
+#include <iostream>
+#include <stdexcept>
+
+template <typename T, size_t N>
+class RestrictedArray {
+private:
+    T arr[N];
+    bool readOnly = false;
+
+public:
+    // Read and Write access
+    T& getWritable(size_t index) {
+        if (readOnly) {
+            throw std::runtime_error("Array is in read-only state!");
+        }
+        return arr[index];
+    }
+
+    // Read-only access
+    const T& getReadable(size_t index) const {
+        return arr[index];
+    }
+
+    void setReadOnly(bool state) {
+        readOnly = state;
+    }
+
+    bool isReadOnly() const {
+        return readOnly;
+    }
+};
+
+int main() {
+    RestrictedArray<int, 3> myArray;
+    
+    myArray.getWritable(0) = 42; // Writing is fine
+    std::cout << myArray.getReadable(0) << '\n'; // Reading is fine
+
+    myArray.setReadOnly(true);   // Switch to read-only state
+    
+    // myArray.getWritable(0) = 99; // Throws std::runtime_error
+    std::cout << myArray.getReadable(0) << '\n'; // Still safe to read
+}
