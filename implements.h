@@ -1,7 +1,6 @@
 #ifndef IMPLEMENTS_H
 #define IMPLEMENTS_H
 
-#include <Arduino.h>
 #include <array>
 
 class implements
