@@ -1,5 +1,4 @@
 #include "implements.h"   // use quotes for your own header
-#include <Arduino.h>
 
 // Set mode for a single pin
 void implements::setMode(int pin, int mode)
